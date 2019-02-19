@@ -3,7 +3,7 @@ var router = express.Router();
 var fs = require('fs');
 
 require('node-import');
-module.exports = imports("../sdk/queueit-knownuserv3-sdk.js");
+module.exports = imports("sdk/queueit-knownuserv3-sdk.js");
 
 function configureKnownUserHashing() {
   var utils = QueueIT.KnownUserV3.SDK.Utils;
@@ -76,7 +76,7 @@ configureKnownUserHashing();
 /* GET home page. */
 router.get('/', function (req, res, next) {
   try {
-    var integrationsConfigString = fs.readFileSync('../integrationconfiguration.json', 'utf8');
+    var integrationsConfigString = fs.readFileSync('integrationconfiguration.json', 'utf8');
 
     var customerId = ""; // Your Queue-it customer ID
     var secretKey = ""; // Your 72 char secret key as specified in Go Queue-it self-service platform
